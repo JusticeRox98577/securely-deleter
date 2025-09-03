@@ -50,26 +50,28 @@
     <div class="row">
       <section class="card">
         <h3>Download</h3>
-        <p class="note">Securely Deleter is a <strong>single Python script</strong>. You can download it directly and run it with Python 3.8+.</p>
+        <p class="note">Securely Deleter ships as <strong>two Python files</strong>. Download both, then run the helper once to install requirements.</p>
         <div class="downloads">
-          <a id="smartBtn" class="btn primary" href="https://github.com/JusticeRox98577/securely-deleter/releases/latest/download/securely_deleter.py" download rel="noopener">Download <strong>securely_deleter.py</strong></a>
-          <div class="note">Prefer the command line?</div>
+          <a class="btn primary" href="https://github.com/JusticeRox98577/securely-deleter/releases/latest/download/securely_deleter.py" download rel="noopener">Download <strong>securely_deleter.py</strong></a>
+          <a class="btn" href="https://github.com/JusticeRox98577/securely-deleter/releases/latest/download/PSUTIL.py" download rel="noopener">Download <strong>PSUTIL.py</strong> (helper)</a>
+          <div class="note">Command line downloads</div>
           <div class="card" style="padding:12px">
             <div class="note">Using <strong>curl</strong>:</div>
-            <code>curl -L -o securely_deleter.py https://github.com/JusticeRox98577/securely-deleter/releases/latest/download/securely_deleter.py</code>
+            <code>curl -L -o securely_deleter.py https://github.com/JusticeRox98577/securely-deleter/releases/latest/download/securely_deleter.py</code><br/>
+            <code>curl -L -o PSUTIL.py https://github.com/JusticeRox98577/securely-deleter/releases/latest/download/PSUTIL.py</code>
             <div class="note" style="margin-top:8px">Using <strong>wget</strong>:</div>
-            <code>wget -O securely_deleter.py https://github.com/JusticeRox98577/securely-deleter/releases/latest/download/securely_deleter.py</code>
+            <code>wget -O securely_deleter.py https://github.com/JusticeRox98577/securely-deleter/releases/latest/download/securely_deleter.py</code><br/>
+            <code>wget -O PSUTIL.py https://github.com/JusticeRox98577/securely-deleter/releases/latest/download/PSUTIL.py</code>
           </div>
-          <div class="note">Or install in an isolated environment with <strong>pipx</strong> (from the repo):</div>
-          <code>pipx install git+https://github.com/JusticeRox98577/securely-deleter</code>
+          <div class="note">All assets: <a href="https://github.com/JusticeRox98577/securely-deleter/releases/latest" rel="noopener">latest release</a></div>
         </div>
         <hr style="border-color:#1f2a44;opacity:.6;margin:18px 0"/>
         <div>
-          <strong>Verify checksum</strong>
+          <strong>Verify checksums</strong>
           <p class="note">After download, verify integrity:</p>
           <ul>
-            <li>Windows (PowerShell): <code>Get-FileHash .\securely_deleter.py -Algorithm SHA256</code></li>
-            <li>macOS/Linux: <code>shasum -a 256 securely_deleter.py</code></li>
+            <li>Windows (PowerShell): <code>Get-FileHash .\securely_deleter.py -Algorithm SHA256; Get-FileHash .\PSUTIL.py -Algorithm SHA256</code></li>
+            <li>macOS/Linux: <code>shasum -a 256 securely_deleter.py PSUTIL.py</code></li>
           </ul>
           <p class="note">Compare with <a href="https://github.com/JusticeRox98577/securely-deleter/releases/latest/download/SHA256SUMS.txt" rel="noopener">SHA256SUMS.txt</a>.</p>
         </div>
@@ -77,7 +79,9 @@
         <hr style="border-color:#1f2a44;opacity:.6;margin:18px 0"/>
         <div>
           <strong>Usage</strong>
-          <p class="note">Run from a terminal (no install required):</p>
+          <p class="note">Run from a terminal (first-time setup runs the helper):</p>
+          <code>python PSUTIL.py</code>
+          <p class="note" style="margin-top:8px">Then:</p>
           <code>python securely_deleter.py --help</code>
           <p class="note" style="margin-top:8px">Example:</p>
           <code>python securely_deleter.py --passes 3 --shred --verify "~/Downloads/BigFile.iso"</code>
