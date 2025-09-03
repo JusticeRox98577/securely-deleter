@@ -3,34 +3,34 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Securely Deleter</title>
-  <meta name="description" content="Official download page for Securely Deleter (Python version)." />
+  <title>SCDelete — Securely Deleter</title>
+  <meta name="description" content="Official purchase and downloads for Securely Deleter by SCDelete." />
   <link rel="icon" href="/favicon.ico" />
   <style>
-    :root {
-      --bg: #0b1220; --card: #121a2b; --ink: #e7ecf7; --sub:#a8b3cf; --brand:#7c5cff; --ok:#22c55e;
-    }
+    :root { --bg:#0b1220; --card:#121a2b; --ink:#e7ecf7; --sub:#a8b3cf; --brand:#7c5cff; --ok:#22c55e; --err:#ef4444; --line:#1f2a44; }
     *{box-sizing:border-box}
     html,body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",Arial}
-    a{color:var(--brand);text-decoration:none}
-    a:hover{text-decoration:underline}
+    a{color:var(--brand);text-decoration:none} a:hover{text-decoration:underline}
     .wrap{max-width:980px;margin:0 auto;padding:32px}
     header{display:flex;align-items:center;gap:14px}
     header .logo{width:44px;height:44px;border-radius:12px;background:linear-gradient(135deg,#8b5cf6,#06b6d4);display:grid;place-items:center;font-weight:700}
     header h1{margin:0;font-size:28px}
-    .hero{margin:28px 0 20px;display:grid;gap:10px}
+    .hero{margin:12px 0 20px;display:grid;gap:6px}
     .hero h2{margin:0;font-size:22px;color:var(--sub);font-weight:500}
-    .card{background:var(--card);border:1px solid #1f2a44;border-radius:18px;padding:18px}
+    .card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:18px}
     .row{display:grid;gap:12px}
     @media(min-width:880px){.row{grid-template-columns:1.1fr .9fr;align-items:start}}
     .btn{display:inline-flex;align-items:center;gap:10px;padding:12px 16px;border-radius:12px;font-weight:600;background:#1f2a44;border:1px solid #2a3a61}
     .btn.primary{background:var(--brand);border-color:#6b4cf0;color:#fff}
-    .btn small{opacity:.8;font-weight:500}
     .downloads{display:grid;gap:10px}
     .note{color:var(--sub);font-size:14px}
     code{background:#0d1424;border:1px solid #1b2743;padding:2px 6px;border-radius:6px}
     footer{margin:28px 0;color:var(--sub);font-size:14px}
-    .ok{color:var(--ok)}
+    hr{border:0;border-top:1px solid var(--line);opacity:.6;margin:18px 0}
+    .banner{display:none;margin:0 0 16px;padding:12px;border-radius:10px}
+    .banner.ok{border:1px solid var(--ok);background:#0f1d2f;color:var(--ok)}
+    .banner.err{border:1px solid var(--err);background:#2a0f13;color:#fecaca}
+    .key{font-family:ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace}
   </style>
 </head>
 <body>
@@ -39,34 +39,54 @@
       <div class="logo" aria-hidden="true">SD</div>
       <div>
         <h1>Securely Deleter</h1>
-        <div class="note">Official Python script download & usage instructions</div>
+        <div class="note">by SCDelete • official checkout & downloads</div>
       </div>
     </header>
 
     <section class="hero">
-      <h2>Erase files securely — open source, Python‑based, and cross‑platform.</h2>
+      <h2>Erase files the right way — fast, verifiable, and cross-platform.</h2>
     </section>
+
+    <div id="thankyou" class="banner ok">
+      ✅ Thank you for supporting <strong>SCDelete</strong>!
+      Your payment was successful. You can now download Securely Deleter below.
+      <div class="note" style="margin-top:6px">Your license key: <span id="licenseKey" class="key"></span></div>
+    </div>
+    <div id="errorBox" class="banner err"></div>
 
     <div class="row">
       <section class="card">
-        <h3>Download</h3>
-        <p class="note">Securely Deleter ships as <strong>two Python files</strong>. Download both, then run the helper once to install requirements.</p>
-        <div class="downloads">
-          <a class="btn primary" href="https://github.com/JusticeRox98577/securely-deleter/releases/latest/download/securely_deleter.py" download rel="noopener">Download <strong>securely_deleter.py</strong></a>
-          <a class="btn" href="https://github.com/JusticeRox98577/securely-deleter/releases/latest/download/PSUTIL.py" download rel="noopener">Download <strong>PSUTIL.py</strong> (helper)</a>
-          <div class="note">Command line downloads</div>
-          <div class="card" style="padding:12px">
-            <div class="note">Using <strong>curl</strong>:</div>
-            <code>curl -L -o securely_deleter.py https://github.com/JusticeRox98577/securely-deleter/releases/latest/download/securely_deleter.py</code><br/>
-            <code>curl -L -o PSUTIL.py https://github.com/JusticeRox98577/securely-deleter/releases/latest/download/PSUTIL.py</code>
-            <div class="note" style="margin-top:8px">Using <strong>wget</strong>:</div>
-            <code>wget -O securely_deleter.py https://github.com/JusticeRox98577/securely-deleter/releases/latest/download/securely_deleter.py</code><br/>
-            <code>wget -O PSUTIL.py https://github.com/JusticeRox98577/securely-deleter/releases/latest/download/PSUTIL.py</code>
-          </div>
-          <div class="note">All assets: <a href="https://github.com/JusticeRox98577/securely-deleter/releases/latest" rel="noopener">latest release</a></div>
+        <h3>Get Securely Deleter</h3>
+        <p class="note">Subscribe monthly to unlock downloads. You’ll be redirected back here automatically.</p>
+
+        <div class="downloads" style="margin-bottom:8px">
+          <!-- Stripe subscription Payment Link -->
+          <a id="buyBtn" class="btn primary" href="https://buy.stripe.com/fZu5kD7TEdeVeaPg1Hffy00" rel="noopener">Buy & Unlock</a>
+          <div class="note">If you already paid and got back here: your license key will appear and downloads will unlock automatically.</div>
         </div>
-        <hr style="border-color:#1f2a44;opacity:.6;margin:18px 0"/>
-        <div>
+
+        <hr>
+
+        <!-- Hidden download area (revealed after successful claim or manual query flag) -->
+        <div id="dl" style="display:none">
+          <h3>Download</h3>
+          <p class="note">Download both files, then run the helper once to install requirements.</p>
+          <div class="downloads">
+            <a class="btn" href="https://github.com/JusticeRox98577/securely-deleter/releases/latest/download/securely_deleter.py" download rel="noopener">Download <strong>securely_deleter.py</strong></a>
+            <a class="btn" href="https://github.com/JusticeRox98577/securely-deleter/releases/latest/download/PSUTIL.py" download rel="noopener">Download <strong>PSUTIL.py</strong> (helper)</a>
+            <div class="note">Command line</div>
+            <div class="card" style="padding:12px">
+              <div class="note">curl:</div>
+              <code>curl -L -o securely_deleter.py https://github.com/JusticeRox98577/securely-deleter/releases/latest/download/securely_deleter.py</code><br/>
+              <code>curl -L -o PSUTIL.py https://github.com/JusticeRox98577/securely-deleter/releases/latest/download/PSUTIL.py</code>
+              <div class="note" style="margin-top:8px">wget:</div>
+              <code>wget -O securely_deleter.py https://github.com/JusticeRox98577/securely-deleter/releases/latest/download/securely_deleter.py</code><br/>
+              <code>wget -O PSUTIL.py https://github.com/JusticeRox98577/securely-deleter/releases/latest/download/PSUTIL.py</code>
+            </div>
+            <div class="note">All assets: <a href="https://github.com/JusticeRox98577/securely-deleter/releases/latest" rel="noopener">latest release</a></div>
+          </div>
+
+          <hr>
           <strong>Verify checksums</strong>
           <p class="note">After download, verify integrity:</p>
           <ul>
@@ -74,10 +94,8 @@
             <li>macOS/Linux: <code>shasum -a 256 securely_deleter.py PSUTIL.py</code></li>
           </ul>
           <p class="note">Compare with <a href="https://github.com/JusticeRox98577/securely-deleter/releases/latest/download/SHA256SUMS.txt" rel="noopener">SHA256SUMS.txt</a>.</p>
-        </div>
 
-        <hr style="border-color:#1f2a44;opacity:.6;margin:18px 0"/>
-        <div>
+          <hr>
           <strong>Usage</strong>
           <p class="note">Run from a terminal (first-time setup runs the helper):</p>
           <code>python PSUTIL.py</code>
@@ -91,32 +109,65 @@
       <aside class="card">
         <h3>Release notes</h3>
         <div id="notes" class="note">Fetching latest release…</div>
-        <p class="note">Source code & issues: <a href="https://github.com/JusticeRox98577/securely-deleter" rel="noopener">GitHub repo</a></p>
+        <p class="note">Source & issues: <a href="https://github.com/JusticeRox98577/securely-deleter" rel="noopener">GitHub repo</a></p>
+        <p class="note">Domain: <a href="https://scdelete.linkpc.net" rel="noopener">scdelete.linkpc.net</a></p>
       </aside>
     </div>
 
     <footer>
-      <div>© <span id=\"year\"></span> Securely Deleter • <span class=\"ok\">HTTPS</span> only • <a href=\"/privacy.html\">Privacy</a> • <a href=\"https://SCDELETE.LINKPC.NET\" rel=\"noopener\">SCDELETE.LINKPC.NET</a></div>
+      © <span id="year"></span> SCDelete • <span style="color:var(--ok)">HTTPS</span> only • <a href="/privacy.html">Privacy</a>
     </footer>
   </div>
 
   <script>
-    // Fetch latest release notes from GitHub API (no key needed)
+    // Helper: show/hide elements
+    function show(id, on = true){ const el = document.getElementById(id); if(el) el.style.display = on ? 'block' : 'none'; }
+    function setText(id, text){ const el = document.getElementById(id); if(el) el.textContent = text; }
+    function showError(msg){ const box = document.getElementById('errorBox'); if(!box) return; box.textContent = msg; box.style.display='block'; }
+
+    // Release notes (GitHub API)
     fetch('https://api.github.com/repos/JusticeRox98577/securely-deleter/releases/latest')
       .then(r=>r.json())
       .then(data=>{
         const el = document.getElementById('notes');
         if(data && data.name){
-          el.innerHTML = `<strong>${data.name}</strong><br/>` + (data.body ? data.body.replace(/
-/g,'<br/>') : 'No notes.');
+          el.innerHTML = `<strong>${data.name}</strong><br/>` + (data.body ? data.body.replace(/\n/g,'<br/>') : 'No notes.');
         } else {
           el.textContent = 'No releases yet.';
         }
-      }).catch(()=>{
-        document.getElementById('notes').textContent='Unable to load release notes.';
-      });
+      }).catch(()=>{ document.getElementById('notes').textContent='Unable to load release notes.'; });
 
     document.getElementById('year').textContent = new Date().getFullYear();
+
+    // After successful Stripe checkout, Stripe appends ?session_id=cs_test_...
+    // We exchange it for a license key via your Cloudflare Worker, then reveal downloads.
+    (async () => {
+      const params = new URLSearchParams(location.search);
+      const sessionId = params.get('session_id');
+
+      // Also support manual unlock flag if you ever need it
+      if(params.has('download')) { show('dl', true); }
+
+      if(!sessionId) return;
+
+      try {
+        const url = "https://scdelete-license.justoce09.workers.dev/claim?session_id=" + encodeURIComponent(sessionId);
+        const res = await fetch(url);
+        const data = await res.json();
+
+        if(data && data.ok && data.license_key){
+          // Save license locally so the user can paste it into the app later
+          localStorage.setItem('scdelete_license', data.license_key);
+          setText('licenseKey', data.license_key);
+          show('thankyou', true);
+          show('dl', true);
+        } else {
+          showError("We couldn't retrieve your license key. Please refresh this page in a minute or contact support.");
+        }
+      } catch (e) {
+        showError("Claim request failed. Please check your connection or try again shortly.");
+      }
+    })();
   </script>
 </body>
 </html>
