@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Securely Deleter</title>
+  <meta name="description" content="Official download page for Securely Deleter (Python version)." />
+  <link rel="icon" href="/favicon.ico" />
+  <style>
+    :root {
+      --bg: #0b1220; --card: #121a2b; --ink: #e7ecf7; --sub:#a8b3cf; --brand:#7c5cff; --ok:#22c55e;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",Arial}
+    a{color:var(--brand);text-decoration:none}
+    a:hover{text-decoration:underline}
+    .wrap{max-width:980px;margin:0 auto;padding:32px}
+    header{display:flex;align-items:center;gap:14px}
+    header .logo{width:44px;height:44px;border-radius:12px;background:linear-gradient(135deg,#8b5cf6,#06b6d4);display:grid;place-items:center;font-weight:700}
+    header h1{margin:0;font-size:28px}
+    .hero{margin:28px 0 20px;display:grid;gap:10px}
+    .hero h2{margin:0;font-size:22px;color:var(--sub);font-weight:500}
+    .card{background:var(--card);border:1px solid #1f2a44;border-radius:18px;padding:18px}
+    .row{display:grid;gap:12px}
+    @media(min-width:880px){.row{grid-template-columns:1.1fr .9fr;align-items:start}}
+    .btn{display:inline-flex;align-items:center;gap:10px;padding:12px 16px;border-radius:12px;font-weight:600;background:#1f2a44;border:1px solid #2a3a61}
+    .btn.primary{background:var(--brand);border-color:#6b4cf0;color:#fff}
+    .btn small{opacity:.8;font-weight:500}
+    .downloads{display:grid;gap:10px}
+    .note{color:var(--sub);font-size:14px}
+    code{background:#0d1424;border:1px solid #1b2743;padding:2px 6px;border-radius:6px}
+    footer{margin:28px 0;color:var(--sub);font-size:14px}
+    .ok{color:var(--ok)}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="logo" aria-hidden="true">SD</div>
+      <div>
+        <h1>Securely Deleter</h1>
+        <div class="note">Official Python script download & usage instructions</div>
+      </div>
+    </header>
+
+    <section class="hero">
+      <h2>Erase files securely — open source, Python‑based, and cross‑platform.</h2>
+    </section>
+
+    <div class="row">
+      <section class="card">
+        <h3>Download</h3>
+        <p class="note">Securely Deleter is a <strong>single Python script</strong>. You can download it directly and run it with Python 3.8+.</p>
+        <div class="downloads">
+          <a id="smartBtn" class="btn primary" href="https://github.com/JusticeRox98577/securely-deleter/releases/latest/download/securely_deleter.py" download rel="noopener">Download <strong>securely_deleter.py</strong></a>
+          <div class="note">Prefer the command line?</div>
+          <div class="card" style="padding:12px">
+            <div class="note">Using <strong>curl</strong>:</div>
+            <code>curl -L -o securely_deleter.py https://github.com/JusticeRox98577/securely-deleter/releases/latest/download/securely_deleter.py</code>
+            <div class="note" style="margin-top:8px">Using <strong>wget</strong>:</div>
+            <code>wget -O securely_deleter.py https://github.com/JusticeRox98577/securely-deleter/releases/latest/download/securely_deleter.py</code>
+          </div>
+          <div class="note">Or install in an isolated environment with <strong>pipx</strong> (from the repo):</div>
+          <code>pipx install git+https://github.com/JusticeRox98577/securely-deleter</code>
+        </div>
+        <hr style="border-color:#1f2a44;opacity:.6;margin:18px 0"/>
+        <div>
+          <strong>Verify checksum</strong>
+          <p class="note">After download, verify integrity:</p>
+          <ul>
+            <li>Windows (PowerShell): <code>Get-FileHash .\securely_deleter.py -Algorithm SHA256</code></li>
+            <li>macOS/Linux: <code>shasum -a 256 securely_deleter.py</code></li>
+          </ul>
+          <p class="note">Compare with <a href="https://github.com/JusticeRox98577/securely-deleter/releases/latest/download/SHA256SUMS.txt" rel="noopener">SHA256SUMS.txt</a>.</p>
+        </div>
+
+        <hr style="border-color:#1f2a44;opacity:.6;margin:18px 0"/>
+        <div>
+          <strong>Usage</strong>
+          <p class="note">Run from a terminal (no install required):</p>
+          <code>python securely_deleter.py --help</code>
+          <p class="note" style="margin-top:8px">Example:</p>
+          <code>python securely_deleter.py --passes 3 --shred --verify "~/Downloads/BigFile.iso"</code>
+        </div>
+      </section>
+
+      <aside class="card">
+        <h3>Release notes</h3>
+        <div id="notes" class="note">Fetching latest release…</div>
+        <p class="note">Source code & issues: <a href="https://github.com/JusticeRox98577/securely-deleter" rel="noopener">GitHub repo</a></p>
+      </aside>
+    </div>
+
+    <footer>
+      <div>© <span id=\"year\"></span> Securely Deleter • <span class=\"ok\">HTTPS</span> only • <a href=\"/privacy.html\">Privacy</a> • <a href=\"https://SCDELETE.LINKPC.NET\" rel=\"noopener\">SCDELETE.LINKPC.NET</a></div>
+    </footer>
+  </div>
+
+  <script>
+    // Fetch latest release notes from GitHub API (no key needed)
+    fetch('https://api.github.com/repos/JusticeRox98577/securely-deleter/releases/latest')
+      .then(r=>r.json())
+      .then(data=>{
+        const el = document.getElementById('notes');
+        if(data && data.name){
+          el.innerHTML = `<strong>${data.name}</strong><br/>` + (data.body ? data.body.replace(/
+/g,'<br/>') : 'No notes.');
+        } else {
+          el.textContent = 'No releases yet.';
+        }
+      }).catch(()=>{
+        document.getElementById('notes').textContent='Unable to load release notes.';
+      });
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
