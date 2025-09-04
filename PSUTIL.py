@@ -1,13 +1,27 @@
+#!/usr/bin/env python3
+"""
+PSUTIL.py — Dependency installer for SCDelete
+Installs required third-party dependencies for securely_deleter.py
+"""
+
 import subprocess
 import sys
 
 def install_package(package_name):
-    """Function to install a package using pip"""
+    """Install a package using pip"""
     try:
-        subprocess.check_call([sys.executable, "-m", "pip", "install", package_name])
-        print(f"{package_name} installed successfully!")
+        print(f"Installing {package_name}...")
+        subprocess.check_call([sys.executable, "-m", "pip", "install", "--upgrade", package_name])
+        print(f"{package_name} installed successfully!\n")
     except subprocess.CalledProcessError:
-        print(f"Failed to install {package_name}.")
+        print(f"Failed to install {package_name}.\n")
 
-# Install psutil
-install_package("psutil")
+def main():
+    # Core dependencies
+    install_package("psutil")
+    install_package("requests")
+
+    print("✅ All dependencies are installed. You can now run securely_deleter.py")
+
+if __name__ == "__main__":
+    main()
